@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>讀報練習室｜新聞素養練習</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="透過新聞閱讀、提問與查證，練習辨讀資訊的能力。">
+
+  <meta property="og:title" content="讀報練習室｜新聞素養練習">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="透過新聞閱讀、提問與查證，練習辨讀資訊的能力。">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#f5f5ef">
+</head>
+
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="wordmark" href="#top" aria-label="讀報練習室首頁">
+        <span class="wordmark-mark" aria-hidden="true">讀</span>
+        <span>讀報練習室</span>
+      </a>
+      <nav class="mode-switch" aria-label="主要功能">
+        <button class="mode-button is-active" type="button" data-view="practice" aria-current="page">練習作題</button>
+        <button class="mode-button" type="button" data-view="upload">上傳題庫</button>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="intro" aria-labelledby="page-title">
+        <div class="intro-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> MEDIA LITERACY · 練習 01</p>
+          <h1 id="page-title">讀懂新聞，<br><span>也讀懂它沒說的。</span></h1>
+          <p class="intro-description">慢一點閱讀，多問一個為什麼。</p>
+        </div>
+        <div class="issue-stamp" aria-label="本次練習共三題">
+          <span class="stamp-label">本日練習</span>
+          <span class="stamp-number" id="question-count">03</span>
+          <span class="stamp-caption">道題目</span>
+        </div>
+      </section>
+
+      <section class="view-panel" id="practice-view" aria-labelledby="practice-heading">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">YOUR READING DESK</p>
+            <h2 id="practice-heading">今日讀報練習</h2>
+          </div>
+          <p class="section-note"><span class="note-marker"></span>選出你認為最合理的答案</p>
+        </div>
+        <div class="quiz-meta" aria-live="polite">
+          <span id="quiz-progress">作答進度 <strong>0 / 3</strong></span>
+          <span class="progress-track" aria-hidden="true"><span id="progress-fill"></span></span>
+          <span class="meta-date">閱讀・思考・查證</span>
+        </div>
+        <form id="quiz-form" novalidate>
+          <div id="question-list" class="question-list"></div>
+          <div class="submit-row">
+            <p class="submit-hint" id="submit-hint">每題選一個答案，再查看你的閱讀雷達。</p>
+            <button class="submit-button" type="submit">
+              <span>提交答案</span><span class="button-arrow" aria-hidden="true">↗</span>
+            </button>
+          </div>
+        </form>
+        <section class="score-panel" id="score-panel" aria-live="polite" hidden></section>
+      </section>
+
+      <section class="view-panel upload-view" id="upload-view" aria-labelledby="upload-heading" hidden>
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">YOUR QUESTION BANK</p>
+            <h2 id="upload-heading">載入一份新題庫</h2>
+          </div>
+          <p class="section-note">支援標準 JSON 格式</p>
+        </div>
+        <p class="upload-description">貼上題庫 JSON。載入前會檢查每題的新聞、題目、四個選項與正確答案。</p>
+        <label class="sr-only" for="question-bank-json">題庫 JSON 內容</label>
+        <textarea id="question-bank-json" class="json-input" spellcheck="false" placeholder='[
+  {
+    "id": 1,
+    "news": "新聞文本內容...",
+    "question": "根據上述新聞，下列敘述何者正確？",
+    "options": {
+      "A": "選項 A",
+      "B": "選項 B",
+      "C": "選項 C",
+      "D": "選項 D"
+    },
+    "answer": "A"
+  }
+]'></textarea>
+        <div class="upload-actions">
+          <p id="upload-message" class="upload-message" aria-live="polite">題庫會保留在目前頁面，重新整理後恢復預設題目。</p>
+          <button class="submit-button" id="load-bank-button" type="button">
+            <span>載入題庫</span><span class="button-arrow" aria-hidden="true">↗</span>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>讀報練習室 <span class="footer-separator">/</span> 練習判讀，不急著下結論</span>
+      <span>READ WITH CURIOSITY</span>
+    </footer>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
