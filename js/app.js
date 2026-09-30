@@ -125,7 +125,7 @@ function showResults() {
 		});
 
 		explanations.push(`
-			<p class="answer-note"><strong>第 ${index + 1} 題・${correct ? "答對" : `正確答案 ${item.answer}`}：</strong>${escapeHTML(item.explanation || "回到新聞內容，找出支持正確選項的線索。")}</p>
+			<p class="answer-note${correct ? "" : " is-wrong"}"><strong>第 ${index + 1} 題・${correct ? "答對" : `正確答案 ${item.answer}`}：</strong>${escapeHTML(item.explanation || "回到新聞內容，找出支持正確選項的線索。")}</p>
 		`);
 	});
 

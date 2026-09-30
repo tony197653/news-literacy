@@ -252,6 +252,7 @@ h2 { margin-bottom: 0; font-family: var(--serif); font-size: 27px; font-weight: 
 .score-message { margin: 4px 0 0; color: #50635a; font-size: 12px; line-height: 1.7; }
 .answer-note { margin-top: 11px; padding-top: 10px; border-top: 1px solid #c9ddce; color: #42554b; font-size: 12px; line-height: 1.8; }
 .answer-note strong { color: var(--green); }
+.answer-note.is-wrong, .answer-note.is-wrong strong { color: #a34438; }
 .upload-view { min-height: 460px; }
 .upload-description { max-width: 590px; margin: -7px 0 17px; color: var(--muted); font-size: 13px; line-height: 1.8; }
 
